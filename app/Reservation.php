@@ -9,11 +9,12 @@ class Reservation extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['restaurants_id', 'reservation_date', 'reservation_time', 'amount_of_people'];
-    protected $hidden = ['created_at', 'update_at', 'deleted_at'];
+    protected $fillable = ['restaurant_id', 'reservation_date', 'table_name','amount_of_people'];
+    protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
 
     public function restaurant()
     {
         return $this->belongsTo('App\Restaurant');
     }
+
 }

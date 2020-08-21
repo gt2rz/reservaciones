@@ -15,9 +15,9 @@ class CreateReservationsTable extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('restaurants_id')->constrained();
+            $table->foreignId('restaurant_id')->constrained();
             $table->date('reservation_date');
-            $table->date('reservation_time');
+            $table->string('table_name');
             $table->integer('amount_of_people');
             $table->timestamps();
             $table->softDeletes('deleted_at');

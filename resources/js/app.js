@@ -8,6 +8,32 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import BootstrapVue from 'bootstrap-vue';
+Vue.use(BootstrapVue);
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+import { Form, HasError, AlertError } from 'vform';
+window.Form = Form;
+Vue.component(HasError.name, HasError)
+Vue.component(AlertError.name, AlertError)
+
+import Swal from 'sweetalert2';
+window.Swal = Swal;
+
+const Toast = Swal.mixin({
+    toast:true,
+    position:'top-end',
+    showConfirmButton:false,
+    timer:3000,
+    timerProgressBar:true,
+    onOpen:(toast) => {
+        toast.addEventListener('mouseenter',Swal.stopTimer),
+        toast.addEventListener('mouseleave',Swal.resumeTimer)
+    }
+})
+window.Toast = Toast;
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -19,7 +45,9 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('restaurant-component', require('./components/RestaurantComponent.vue').default);
+Vue.component('reservation-component', require('./components/ReservationComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
