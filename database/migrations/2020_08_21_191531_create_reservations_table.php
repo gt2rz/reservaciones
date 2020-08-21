@@ -18,7 +18,7 @@ class CreateReservationsTable extends Migration
             $table->foreignId('restaurants_id')->constrained();
             $table->date('reservation_date');
             $table->date('reservation_time');
-            $table->integer('amount of people');
+            $table->integer('amount_of_people');
             $table->timestamps();
             $table->softDeletes('deleted_at');
         });
