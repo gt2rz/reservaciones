@@ -29,15 +29,24 @@
 Este sistema propociona las siguientes url
 
 GET http://localhost:8000/api/restaurants/  --> index
+
 POST http://localhost:8000/api/restaurants/  --> store
+
 PUT http://localhost:8000/api/restaurants/{id} --> update
+
 DELETE http://localhost:8000/api/restaurants/{id} --> delete
+
 GET http://localhost:8000/api/restaurants/{id} --> show
 
 
+
 GET http://localhost:8000/api/reservations/  --> index
+
 POST http://localhost:8000/api/reservations/  --> store
+
 PUT http://localhost:8000/api/reservations/{id} --> update
+
 DELETE http://localhost:8000/api/reservations/{id} --> delete
+
 GET http://localhost:8000/api/reservations/{id} --> show
 
